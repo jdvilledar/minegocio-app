@@ -1,0 +1,36 @@
+services:
+  mariadb:
+    image: mariadb:11
+    container_name: minegocio-mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: dolibarr
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: ${DB_DOLIBARR_PASSWORD}
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    networks:
+      - minegocio-net
+
+  dolibarr:
+    image: dolibarr/dolibarr:latest
+    container_name: minegocio-erp
+    restart: unless-stopped
+    depends_on:
+      - mariadb
+    environment:
+      DOLI_DB_HOST: mariadb
+      DOLI_DB_NAME: dolibarr
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: ${DB_DOLIBARR_PASSWORD}
+    volumes:
+      - ./data:/var/www/documents
+    ports:
+      - "8080:80"
+    networks:
+      - minegocio-net
+
+networks:
+  minegocio-net:
+    external: true

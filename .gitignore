@@ -1,0 +1,50 @@
+# ===============================
+# Minegocio ERP
+# Git Ignore
+# ===============================
+
+# Datos persistentes
+data/
+backups/
+
+# Docker
+**/mariadb/
+**/documents/
+**/html/
+**/logs/
+
+# Portainer
+**/portainer_data/
+**/portainer/
+
+# Certificados
+certs/
+*.pem
+*.key
+
+# Variables de entorno
+.env
+.env.*
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# VSCode
+.vscode/
+
+# IntelliJ
+.idea/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+.env
