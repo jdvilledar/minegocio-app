@@ -1,33 +1,5 @@
-### Minegocio
+# Minegocio ERP
 
-ERP para pequeñas empresas
+Minegocio ERP es un proyecto desarrollado por Compu-Tecnics con el objetivo de ofrecer una plataforma moderna, modular y fácil de implementar para las MIPYMES guatemaltecas.
 
-### Installation
-
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
-
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch 
-bench install-app minegocio
-```
-
-### Contributing
-
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
-```bash
-cd apps/minegocio
-pre-commit install
-```
-
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### License
-
-mit
+El proyecto utiliza ERPNext y el framework Frappe como núcleo, incorporando aplicaciones, módulos y configuraciones propias de Minegocio para adaptarse a la realidad fiscal, comercial y operativa de Guatemala.
